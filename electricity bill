@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int units;
+    float bill;
+
+    // Input units consumed
+    printf("Enter number of units consumed: ");
+    scanf("%d", &units);
+
+    // Calculate bill (₹5 per unit)
+    bill = units * 5;
+
+    // Display bill amount
+    printf("\nTotal Electricity Bill = %.2f\n", bill);
+
+    return 0;
+}
+o/p
+Enter number of units consumed: 100
+
+Total Electricity Bill = 500.00

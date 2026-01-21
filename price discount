@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    float price, discountPercent, discountAmount, finalPrice;
+// Input original price
+    printf("Enter the original price: ");
+    scanf("%f", &price);
+// Input discount percentage
+    printf("Enter discount percentage: ");
+    scanf("%f", &discountPercent);
+// Calculate discount amount
+    discountAmount = (price * discountPercent) / 100;
+ // Calculate final price after discount
+    finalPrice = price - discountAmount;
+ // Display result
+    printf("Discount Amount = %.2f\n", discountAmount);
+    printf("Total Price After Discount = %.2f\n", finalPrice);
+return 0;
+}
+o/p
+Enter the original price: 1000
+Enter discount percentage: 10
+Discount Amount = 100.00
+Total Price After Discount = 900.00

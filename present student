@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+    int n, i, count = 0;
+    char status;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+ // Input attendance for each student
+    for(i = 1; i <= n; i++) {
+        printf("Is student %d present? (P/A): ", i);
+        scanf(" %c", &status);  // Note the space before %c
+        if(status == 'P' || status == 'p') {
+            count++;  // Increment count if present
+        }
+    }
+ // Display number of present students
+    printf("\nNumber of present students = %d\n", count);
+ return 0;
+}
+o/p
+Enter number of students: 5
+Is student 1 present? (P/A): P
+Is student 2 present? (P/A): A
+Is student 3 present? (P/A): p
+Is student 4 present? (P/A): A
+Is student 5 present? (P/A): P
+
+Number of present students = 3

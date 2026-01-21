@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    int marks[n];  // Array to store marks
+
+    // Input marks
+    for(i = 0; i < n; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+
+    // Display marks
+    printf("\nMarks of Students:\n");
+    for(i = 0; i < n; i++) {
+        printf("Student %d: %d\n", i + 1, marks[i]);
+    }
+
+    return 0;
+}
+o/p
+Enter number of students: 3
+Enter marks for student 1: 85
+Enter marks for student 2: 90
+Enter marks for student 3: 78
+
+Marks of Students:
+Student 1: 85
+Student 2: 90
+Student 3: 78
+

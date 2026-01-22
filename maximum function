@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// function to find maximum
+int findMax(int a, int b)
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+int main()
+{
+    int num1, num2, max;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    max = findMax(num1, num2);
+
+    printf("Maximum number = %d\n", max);
+
+    return 0;
+}
+o/p
+Enter first number: 25
+Enter second number: 40
+Maximum number = 40
+

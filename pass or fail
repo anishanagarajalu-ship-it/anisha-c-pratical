@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int marks;
+
+    // Input marks
+    printf("Enter your marks: ");
+    scanf("%d", &marks);
+
+    // Check pass or fail
+    if (marks >= 40)
+        printf("Congratulations! You have passed.\n");
+    else
+        printf("Sorry! You have failed.\n");
+
+    return 0;
+}
+o/p
+Enter your marks: 75
+Congratulations! You have passed.
+Enter your marks: 35
+Sorry! You have failed.

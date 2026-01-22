@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// structure definition
+struct Employee
+{
+    int empId;
+    char name[20];
+    float salary;
+};
+
+int main()
+{
+    struct Employee e;
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e.empId);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", e.name);
+
+    printf("Enter Salary: ");
+    scanf("%f", &e.salary);
+
+    printf("\n--- Employee Details ---\n");
+    printf("Employee ID   : %d\n", e.empId);
+    printf("Employee Name : %s\n", e.name);
+    printf("Salary        : %.2f\n", e.salary);
+
+    return 0;
+}
+o/p
+Enter Employee ID: 201
+Enter Employee Name: Anisha
+Enter Salary: 25000
+
+--- Employee Details ---
+Employee ID   : 201
+Employee Name : Anisha
+Salary        : 25000.00

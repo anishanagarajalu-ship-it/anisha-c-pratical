@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int courseID;
+    char courseName[50];
+    int duration; // duration in weeks
+
+    // Input course details
+    printf("Enter Course ID: ");
+    scanf("%d", &courseID);
+
+    // Clear the input buffer before reading string
+    getchar();
+
+    printf("Enter Course Name: ");
+    fgets(courseName, sizeof(courseName), stdin);
+
+    printf("Enter Course Duration (in weeks): ");
+    scanf("%d", &duration);
+
+    // Display course details
+    printf("\n--- Course Details ---\n");
+    printf("Course ID: %d\n", courseID);
+    printf("Course Name: %s", courseName); // fgets includes newline
+    printf("Course Duration: %d weeks\n", duration);
+
+    return 0;
+}
+o/p
+Enter Course ID: 101
+Enter Course Name: Computer Science
+Enter Course Duration (in weeks): 12
+
+--- Course Details ---
+Course ID: 101
+Course Name: Computer Science
+Course Duration: 12 weeks

@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+// structure definition
+struct BankAccount
+{
+    int accNo;
+    char name[20];
+    float balance;
+};
+
+int main()
+{
+    struct BankAccount acc;
+    int choice;
+    float amount;
+
+    // input account details
+    printf("Enter Account Number: ");
+    scanf("%d", &acc.accNo);
+
+    printf("Enter Account Holder Name: ");
+    scanf("%s", acc.name);
+
+    printf("Enter Initial Balance: ");
+    scanf("%f", &acc.balance);
+
+    // menu
+    printf("\n1. Deposit\n2. Withdraw\n3. Display Details\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+    {
+        printf("Enter amount to deposit: ");
+        scanf("%f", &amount);
+        acc.balance += amount;
+        printf("Deposit Successful\n");
+    }
+    else if (choice == 2)
+    {
+        printf("Enter amount to withdraw: ");
+        scanf("%f", &amount);
+        if (amount <= acc.balance)
+        {
+            acc.balance -= amount;
+            printf("Withdrawal Successful\n");
+        }
+        else
+        {
+            printf("Insufficient Balance\n");
+        }
+    }
+
+    // display details
+    printf("\n--- Account Details ---\n");
+    printf("Account Number : %d\n", acc.accNo);
+    printf("Name           : %s\n", acc.name);
+    printf("Balance        : %.2f\n", acc.balance);
+
+    return 0;
+}
+o/p
+Enter Account Number: 12345
+Enter Account Holder Name: Anisha
+Enter Initial Balance: 5000
+
+1. Deposit
+2. Withdraw
+3. Display Details
+Enter your choice: 1
+Enter amount to deposit: 1500
+Deposit Successful
+
+--- Account Details ---
+Account Number : 12345
+Name           : Anisha
+Balance        : 6500.00

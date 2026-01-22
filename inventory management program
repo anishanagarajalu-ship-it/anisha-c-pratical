@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_ITEMS 100
+
+// Structure to store item details
+struct Item {
+    int id;
+    char name[50];
+    int quantity;
+    float price;
+};
+
+// Global variables
+struct Item inventory[MAX_ITEMS];
+int itemCount = 0;
+
+// Function prototypes
+void addItem();
+void displayInventory();
+void searchItem();
+
+int main() {
+    int choice;
+
+    while (1) {
+        printf("\n--- Simple Inventory Management System ---\n");
+        printf("1. Add Item\n");
+        printf("2. Display Inventory\n");
+        printf("3. Search Item by ID\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1: addItem(); break;
+            case 2: displayInventory(); break;
+            case 3: searchItem(); break;
+            case 4: return 0;
+            default: printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
+
+void addItem() {
+    if (itemCount < MAX_ITEMS) {
+        printf("Enter Item ID: ");
+        scanf("%d", &inventory[itemCount].id);
+        printf("Enter Item Name: ");
+        scanf("%s", inventory[itemCount].name);
+        printf("Enter Quantity: ");
+        scanf("%d", &inventory[itemCount].quantity);
+        printf("Enter Price: ");
+        scanf("%f", &inventory[itemCount].price);
+
+        itemCount++;
+        printf("Item added successfully!\n");
+    } else {
+        printf("Inventory full!\n");
+    }
+}
+
+void displayInventory() {
+    if (itemCount == 0) {
+        printf("\nInventory is empty.\n");
+        return;
+    }
+    printf("\nID\tName\t\tQty\tPrice\n");
+    printf("--------------------------------------\n");
+    for (int i = 0; i < itemCount; i++) {
+        printf("%d\t%-15s\t%d\t$%.2f\n", 
+               inventory[i].id, inventory[i].name, 
+               inventory[i].quantity, inventory[i].price);
+    }
+}
+
+void searchItem() {
+    int searchId, found = 0;
+    printf("Enter Item ID to search: ");
+    scanf("%d", &searchId);
+
+    for (int i = 0; i < itemCount; i++) {
+        if (inventory[i].id == searchId) {
+            printf("\nItem Found:\nName: %s\nQuantity: %d\nPrice: $%.2f\n", 
+                   inventory[i].name, inventory[i].quantity, inventory[i].price);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) printf("Item not found.\n");
+}
+output
+--- Simple Inventory Management System ---
+1. Add Item
+2. Display Inventory
+3. Search Item by ID
+4. Exit
+Enter your choice: 1
+Enter Item ID: 101
+Enter Item Name: Hammer
+Enter Quantity: 50
+Enter Price: 12.99
+Item added successfully!
+
+--- Simple Inventory Management System ---
+1. Add Item
+2. Display Inventory
+3. Search Item by ID
+4. Exit
+Enter your choice: 2
+
+ID      Name            Qty     Price
+
+101     Hammer          50      $12.99

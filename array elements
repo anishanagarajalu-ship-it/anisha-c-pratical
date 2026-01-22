@@ -1,0 +1,42 @@
+77.#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr1[50], arr2[50];
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements of first array:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    // Copy elements
+    for(i = 0; i < n; i++) {
+        arr2[i] = arr1[i];
+    }
+
+    // Display first array
+    printf("\nFirst Array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr1[i]);
+    }
+
+    // Display second array
+    printf("\nSecond Array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr2[i]);
+    }
+
+    return 0;
+}
+o/p
+Enter number of elements: 5
+Enter elements of first array:
+10 20 30 40 50
+
+First Array:
+10 20 30 40 50
+Second Array:
+10 20 30 40 50

@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+// structure definition
+struct BusTicket
+{
+    int ticketNo;
+    char passengerName[30];
+    char source[20];
+    char destination[20];
+    float fare;
+};
+
+int main()
+{
+    struct BusTicket ticket;
+
+    // input ticket details
+    printf("Enter Ticket Number: ");
+    scanf("%d", &ticket.ticketNo);
+
+    printf("Enter Passenger Name: ");
+    scanf("%s", ticket.passengerName);
+
+    printf("Enter Source: ");
+    scanf("%s", ticket.source);
+
+    printf("Enter Destination: ");
+    scanf("%s", ticket.destination);
+
+    printf("Enter Fare: ");
+    scanf("%f", &ticket.fare);
+
+    // display ticket details
+    printf("\n--- Bus Ticket Details ---\n");
+    printf("Ticket Number    : %d\n", ticket.ticketNo);
+    printf("Passenger Name   : %s\n", ticket.passengerName);
+    printf("Source           : %s\n", ticket.source);
+    printf("Destination      : %s\n", ticket.destination);
+    printf("Fare             : %.2f\n", ticket.fare);
+
+    return 0;
+}
+o/p
+Enter Ticket Number: 501
+Enter Passenger Name: Anisha
+Enter Source: Chennai
+Enter Destination: Bangalore
+Enter Fare: 750
+
+--- Bus Ticket Details ---
+Ticket Number    : 501
+Passenger Name   : Anisha
+Source           : Chennai
+Destination      : Bangalore
+Fare             : 750.00
